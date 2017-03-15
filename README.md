@@ -15,6 +15,6 @@ Image API to categorize it as adult, teen or everyone using the FREE automated i
 
 ## Release History
 
-* 1.0.0 Fixed header
+* 1.0.1 Fixed header
 
 * 1.0.0 Initial release
