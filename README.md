@@ -1,7 +1,12 @@
 Image-Moderation
 =========
 
-Image API to categorize it as adult, teen or everyone using the FREE automated image moderation API at https://moderatecontent.com
+Image API to categorize image url as adult, teen or everyone using the FREE automated image moderation API at https://moderatecontent.com
+
+* Image Types: .jpg .png .bmp .gif
+* Max image size: 10 MB
+* Protocol: HTTP | HTTPS
+* Animated Gif Support 
 
 ## Installation
 
