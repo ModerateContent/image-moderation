@@ -53,8 +53,8 @@ Image API to categorize image url as adult, teen or everyone using the FREE auto
 
 ## Release History
 
+* 1.0.5 Improved documentation
 * 1.0.4 Improved testing
-
 * 1.0.3 Updated README.md
 * 1.0.2 Added tests
 * 1.0.1 Fixed header
