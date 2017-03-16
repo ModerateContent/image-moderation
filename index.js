@@ -12,7 +12,7 @@ exports.evaluate = function(url) {
 		var options = {
 			host: 'www.moderatecontent.com',
 			port: 443,
-			path: '/api/v2?url=' + url + '&animation=true'
+			path: '/api/v2?url=' + url + '&animation=true&key=25b34df5dfadfcf4e05fd617dee8da05'
 		};
 		https.get(options, function(resp){
 			resp.setEncoding('utf8');
@@ -36,7 +36,7 @@ exports.is_adult = function(url) {
 		var options = {
 			host: 'www.moderatecontent.com',
 			port: 443,
-			path: '/api/v2?url=' + url + '&animation=true'
+			path: '/api/v2?url=' + url + '&animation=true&key=25b34df5dfadfcf4e05fd617dee8da05'
 		};
 		https.get(options, function(resp){
 			resp.setEncoding('utf8');
