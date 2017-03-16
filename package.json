@@ -1,6 +1,6 @@
 {
   "name": "image-moderation",
-  "version": "1.0.3",
+  "version": "1.0.5",
   "description": "Image API to categorize it as adult, teen or everyone using the FREE automated image moderation API at moderatecontent.com",
   "author": "Support <info@moderatecontent.com>",
   "contributors": [
