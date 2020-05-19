@@ -33,7 +33,7 @@ exports.is_adult = function(url, key) {
 	return new Promise(function(resolve, reject) {
 		var https = require('https');
 		var options = {
-			host: 'www.moderatecontent.com',
+			host: 'api.moderatecontent.com',
 			port: 443,
 			path: '/moderate/?url=' + url + '&key=' + key
 		};
