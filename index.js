@@ -9,7 +9,6 @@
 exports.evaluate = function(url, key) {
 	return new Promise(function(resolve, reject) {
 		var https = require('https');
-		// console.log("process_url: " + url);
 		var options = {
 			host: 'api.moderatecontent.com',
 			port: 443,
@@ -18,7 +17,6 @@ exports.evaluate = function(url, key) {
 		https.get(options, function(resp){
 			resp.setEncoding('utf8');
 			resp.on('data', function(response){
-				// console.log(response);
 				resolve(response);
 			});
 		});
@@ -34,7 +32,6 @@ exports.evaluate = function(url, key) {
 exports.is_adult = function(url, key) {
 	return new Promise(function(resolve, reject) {
 		var https = require('https');
-		// console.log("process_url: " + url);
 		var options = {
 			host: 'www.moderatecontent.com',
 			port: 443,
@@ -44,9 +41,7 @@ exports.is_adult = function(url, key) {
 			resp.setEncoding('utf8');
 			resp.on('data', function(response){
 				var json = JSON.parse(response);
-				// console.log(json.animation.animation_rating_letter);
-				var flag = (json.rating_letter == "a" || json.animation.animation_rating_letter == "a");
-				// var flag = false;
+				var flag = (json.rating_letter == "a");
 				resolve(flag);
 			});
 		});

@@ -8,7 +8,7 @@ describe('#image-moderation', function() {
 	this.timeout(15000);
 
     it('evaluate image url and return rating_index = 1', function() {
-    	return image_moderation.evaluate("https://www.moderatecontent.com/img/sample_faces.jpg")
+    	return image_moderation.evaluate("https://www.moderatecontent.com/img/sample_faces.jpg","api_key")
     		.then((response)=>{
     			var json = JSON.parse(response);
     			// console.log(json);
@@ -17,14 +17,14 @@ describe('#image-moderation', function() {
     });
 
     it('evaluate image url is_adult as false', function() {
-    	return image_moderation.is_adult("https://www.moderatecontent.com/img/sample_faces.jpg")
+    	return image_moderation.is_adult("https://www.moderatecontent.com/img/sample_faces.jpg","api_key")
     		.then((response)=>{
     			return expect(response).to.equal(false);
     		});
     });
 
     it('evaluate image url that doesn\'t exist and return error', function() {
-        return image_moderation.evaluate("https://www.moderatecontent.com/img/image_does_not_exist.jpg")
+        return image_moderation.evaluate("https://www.moderatecontent.com/img/image_does_not_exist.jpg","api_key")
             .then((response)=>{
                 var json = JSON.parse(response);
                 // console.log(json.error);
@@ -33,7 +33,7 @@ describe('#image-moderation', function() {
     });
 
     it('evaluate image url that is blank and return error', function() {
-        return image_moderation.evaluate("")
+        return image_moderation.evaluate("","api_key")
             .then((response)=>{
                 var json = JSON.parse(response);
                 // console.log(json.error);
