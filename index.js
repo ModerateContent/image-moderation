@@ -3,16 +3,17 @@
 /**
  * Returns a json string with moderation details for an image url
  * @param {string} url
+ * @param {string} key
  * @return {string} json response
  */
-exports.evaluate = function(url) {
+exports.evaluate = function(url, key) {
 	return new Promise(function(resolve, reject) {
 		var https = require('https');
 		// console.log("process_url: " + url);
 		var options = {
-			host: 'www.moderatecontent.com',
+			host: 'api.moderatecontent.com',
 			port: 443,
-			path: '/api/v2?url=' + url + '&animation=true&key=25b34df5dfadfcf4e05fd617dee8da05'
+			path: '/moderate/?url=' + url + '&key=' + key
 		};
 		https.get(options, function(resp){
 			resp.setEncoding('utf8');
@@ -27,16 +28,17 @@ exports.evaluate = function(url) {
 /**
  * Returns a boolean indicating if adult content was found
  * @param {string} url
+ * @param {string} key
  * @return {boolean}
  */
-exports.is_adult = function(url) {
+exports.is_adult = function(url, key) {
 	return new Promise(function(resolve, reject) {
 		var https = require('https');
 		// console.log("process_url: " + url);
 		var options = {
 			host: 'www.moderatecontent.com',
 			port: 443,
-			path: '/api/v2?url=' + url + '&animation=true&key=25b34df5dfadfcf4e05fd617dee8da05'
+			path: '/moderate/?url=' + url + '&key=' + key
 		};
 		https.get(options, function(resp){
 			resp.setEncoding('utf8');

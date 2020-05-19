@@ -16,13 +16,13 @@ Image API to categorize image url as adult, teen or everyone using the FREE auto
 
 	var image_moderation = require('image-moderation');
 
-	image_moderation.evaluate("https://www.moderatecontent.com/img/sample_faces.jpg")
+	image_moderation.evaluate("https://www.moderatecontent.com/img/sample_faces.jpg","your_api_key_from_moderatecontent.com")
 	.then((response) => {
 		var json = JSON.parse(response);
 		console.log(json);
 	});
 
-	image_moderation.is_adult("https://www.moderatecontent.com/img/sample_faces.jpg")
+	image_moderation.is_adult("https://www.moderatecontent.com/img/sample_faces.jpg","your_api_key_from_moderatecontent.com")
 	.then((response) => {
 		console.log("Does this image have adult content (true | false)? " + response);
 	});
@@ -52,7 +52,7 @@ Image API to categorize image url as adult, teen or everyone using the FREE auto
 `npm test`
 
 ## Release History
-
+* 1.0.6 Updated to meet new API
 * 1.0.5 Improved documentation
 * 1.0.4 Improved testing
 * 1.0.3 Updated README.md
